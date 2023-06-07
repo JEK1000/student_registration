@@ -1,12 +1,17 @@
 import axios from 'axios';
 
-export const login = async (FormData) => {
+const fetchData = async (FormData) => {
   try {
-    const response = await axios.post('mysql://root:akHj6zhIEvRMgFWxcPKi@containers-us-west-131.railway.app:7068/railway/student/stud', { 
-      FormData
-    },{ withCredentials: true });
+    const response = await axios.get('https://nodeserv-production.up.railway.app/stud', {
+      FormData,
+      headers: {
+          "Content-Type": "application/json"
+      },
+    });
+    // Handle the response data
     return response.data;
   } catch (error) {
+    // Handle the error
     throw error.response.data;
   }
 };
