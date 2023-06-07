@@ -15,7 +15,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/student_registration/dashboard');
+        const response = await axios.get('https://nodeserv-production.up.railway.app/student_registration/dashboard');
         setData(response.data);
         setCourseID(response.data[0].course_ID);
       } catch (error) {
