@@ -2,12 +2,15 @@ import axios from 'axios';
 
 export const login = async (FormData) => {
   try {
-    const response = await axios.post('https://nodeserv-production.up.railway.app/stud', {
+    const response = await axios.post(
+      'https://nodeserv-production.up.railway.app/stud',
       FormData,
-      headers: {
+      {
+        headers: {
           "Content-Type": "application/json"
-      },
-    });
+        },
+      }
+    );
     // Handle the response data
     return response.data;
   } catch (error) {
@@ -15,4 +18,3 @@ export const login = async (FormData) => {
     throw error.response.data;
   }
 };
-
