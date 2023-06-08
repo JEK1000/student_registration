@@ -36,7 +36,7 @@ export default function Dashboard() {
     }
   }
   function enrollStudent(courseId, courseName) {
-    axios.post(`http://localhost:3000/api/enroll/${studentID}/${courseId}`, {
+    axios.post(`https://nodeserv-production.up.railway.app/api/enroll/${studentID}/${courseId}`, {
     }).then(response => {
       // handle successful enrollment
       window.alert(`You have successfully enrolled in ${courseName}!`);
