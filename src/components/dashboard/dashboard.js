@@ -7,7 +7,7 @@ import './dashboard.css';
 export default function Dashboard() {
 
   const [data, setData] = useState([]);
-  const studentID = Cookies.get('user_id');
+  const studentID = Cookies.get('ajs_user_id');
   const [enrolled, setEnrolled] = useState(false);
   const [enrolledCourses, setEnrolledCourses] = useState([]);
   const [courseId, setCourseID] = useState([]);
