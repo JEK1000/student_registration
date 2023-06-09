@@ -28,26 +28,19 @@ export default function Enrollment() {
   }, []);
 
   
-  function unenrollStudent(courseId) {
-    axios.delete(`https://nodeserv-production.up.railway.app/api/unenroll/${studentID}/${courseId}`)
-        .then(response => {
-        axios.get(`/api/enrollment/${studentID}`)
-          .then(response => {
-            setEnrollmentData(prevData => {
-              // Filter out the unenrolled course from the previous enrollment data
-              const updatedData = Array.isArray(prevData) ? prevData.filter(item => item.course_ID !== courseId) : [];
-              // Add the updated enrollment data from the server
-              updatedData.push(...response.data);
-              // Return the updated enrollment data
-              setData(updatedData);
-            });
-          })
-        })
-        .catch(error => {
-            console.log(error);
-            // handle unenrollment error
-        });
+function unenrollStudent(courseId) {
+  axios
+    .delete(`https://nodeserv-production.up.railway.app/api/unenroll/${studentID}/${courseId}`)
+    .then(response => {
+      // Remove the unenrolled course from the current data/state
+      setData(prevData => prevData.filter(item => item.course_ID !== courseId));
+    })
+    .catch(error => {
+      console.log(error);
+      // Handle unenrollment error
+    });
 }
+
 
 
 
