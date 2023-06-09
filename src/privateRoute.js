@@ -4,7 +4,7 @@ import { Route, Navigate } from "react-router-dom";
 const Protected = ({ isSignedIn, children }) => {
 
   if (!isSignedIn) {
-    return <Navigate to="/student_registration" />;
+    return <Navigate to="/" />;
   }
 
   return <>{children}</>;
