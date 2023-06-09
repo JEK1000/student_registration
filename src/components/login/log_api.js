@@ -9,6 +9,7 @@ export const login = async (FormData) => {
         headers: {
           "Content-Type": "application/json"
         },
+        withCredentials: true // Include cookies in requests
       }
     );
     // Handle the response data
@@ -18,3 +19,4 @@ export const login = async (FormData) => {
     throw error.response.data;
   }
 };
+
