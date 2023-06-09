@@ -11,8 +11,6 @@ export default function Dashboard() {
   const [enrolled, setEnrolled] = useState(false);
   const [enrolledCourses, setEnrolledCourses] = useState([]);
   const [courseId, setCourseID] = useState([]);
-  
-  console.log('this is the student id cookie '+studentID);
 
   useEffect(() => {
     const fetchData = async () => {
