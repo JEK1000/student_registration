@@ -36,7 +36,11 @@ function unenrollStudent(courseId) {
         .get(`/api/enrollment/${studentID}`)
         .then(response => {
           const updatedData = response.data; // Assuming the response data is an array of enrollment objects
-          setEnrollmentData(updatedData);
+          setEnrollmentData(prevData => {
+            // Filter out the unenrolled course from the previous enrollment data
+            const updatedEnrollment = prevData.filter(item => item.course_ID !== courseId);
+            return updatedEnrollment;
+          });
         })
         .catch(error => {
           console.log(error);
@@ -48,6 +52,7 @@ function unenrollStudent(courseId) {
       // Handle unenrollment error
     });
 }
+
 
 
   return (
