@@ -15,7 +15,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://nodeserv-production.up.railway.app/dashboard');
+        const response = await axios.get(https://nodeserver8.onrender.com/dashboard');
         setData(response.data);
         setCourseID(response.data[0].course_ID);
       } catch (error) {
@@ -36,7 +36,7 @@ export default function Dashboard() {
     }
   }
   function enrollStudent(courseId, courseName) {
-    axios.post(`https://nodeserv-production.up.railway.app/api/enroll/${studentID}/${courseId}`, {
+    axios.post(`https://nodeserver8.onrender.com/${studentID}/${courseId}`, {
     }).then(response => {
       // handle successful enrollment
       window.alert(`You have successfully enrolled in ${courseName}!`);
