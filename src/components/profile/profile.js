@@ -25,7 +25,7 @@ export default function Profile() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://nodeserv-production.up.railway.app/api/${studentID}`);
+        const response = await axios.get(`https://nodeserver8.onrender.com/api/${studentID}`);
         setData(response.data);
         setFname(response.data[0].first_name);
         setLname(response.data[0].last_name);
