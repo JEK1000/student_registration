@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-
 import './enrollment.css';
-
 
 export default function Enrollment() {
 
@@ -12,8 +10,7 @@ export default function Enrollment() {
   const [data, setData] = useState([]);
   const studentID = Cookies.get('user_id');
   const [enrollmentData, setEnrollmentData] = useState("");
-
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -40,10 +37,6 @@ function unenrollStudent(courseId) {
       // Handle unenrollment error
     });
 }
-
-
-
-
   return (
     <div className="App">
       <div className="container">
@@ -64,7 +57,6 @@ function unenrollStudent(courseId) {
         {data.length > 0 ? (        
         <tbody>
           {data && data.map((item) => (
-
             <tr>
               <td>{item.status}</td>
               <td>{item.course_name}</td>
@@ -76,7 +68,7 @@ function unenrollStudent(courseId) {
               <td>
                   <button
                     onClick={() => unenrollStudent(item.course_ID)} className="btn btn-danger btn-sm">Unenroll
-                    </button>
+                  </button>
               </td>
             </tr>
           ))}
@@ -88,7 +80,6 @@ function unenrollStudent(courseId) {
             </tr>
           </tbody>
         )}
-
       </table>
       </div>
     </div>
