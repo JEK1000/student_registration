@@ -35,7 +35,7 @@ function App() {
    const result = window.confirm("Are you sure you want to delete your account?");
 
     if (result) {
-      // Delete account logic here
+      // Delete account
       console.log("Account deleted");
       axios.delete(`https://nodeserver8.onrender.com/delete/${studentID}`)
           .then(response => {
