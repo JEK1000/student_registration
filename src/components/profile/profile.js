@@ -46,7 +46,6 @@ export default function Profile() {
     e.preventDefault();
     try {
       const response = await profile({ fname, lname, address, pnumber, email, dob, password }, `${studentID}`);
-      console.log(response); // do something with the response
       if (response)
           setResponse(response);
     } catch (error) {
