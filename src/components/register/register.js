@@ -17,7 +17,7 @@ export default function Register() {
     e.preventDefault();
 
     try {
-      const response = await register({ fname, lname, address, pnumber, email, dob, password });
+      const response = await register({ fname, email, password });
       console.log(response); // do something with the response
       if (response)
           setResponse(response);
