@@ -17,6 +17,7 @@ export default function Dashboard() {
       try {
         const response = await axios.get('https://nodeserv-production.up.railway.app/dashboard');
         setData(response.data);
+        console.log('client: '+studentID);
         setCourseID(response.data[0].course_ID);
       } catch (error) {
         console.log(error);
