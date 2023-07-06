@@ -24,11 +24,7 @@ export default function Profile() {
         const response = await axios.get(`https://nodeserv-production.up.railway.app/api/${studentID}`);
         setData(response.data);
         setFname(response.data[0].first_name);
-        setLname(response.data[0].last_name);
-        setAddress(response.data[0].address);
-        setPnumber(response.data[0].phone_number);
         setEmail(response.data[0].email);
-        setDOB(response.data[0].date_of_birth);
         setPassword(response.data[0].password);
 
       } catch (error) {
@@ -41,7 +37,7 @@ export default function Profile() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await profile({ fname, lname, address, pnumber, email, dob, password }, `${studentID}`);
+      const response = await profile({ fname, email, password }, `${studentID}`);
       if (response)
           setResponse(response);
     } catch (error) {
