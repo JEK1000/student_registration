@@ -14,7 +14,7 @@ export default function Enrollment() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://nodeserver8.onrender.com/api/enrollment/${studentID}`);
+        const response = await axios.get(`https://nodeserv-production.up.railway.app/api/enrollment/${studentID}`);
         setData(response.data);
 
       } catch (error) {
@@ -27,7 +27,7 @@ export default function Enrollment() {
   
 function unenrollStudent(courseId) {
   axios
-    .delete(`https://nodeserver8.onrender.com/api/unenroll/${studentID}/${courseId}`)
+    .delete(`https://nodeserv-production.up.railway.app/api/unenroll/${studentID}/${courseId}`)
     .then(response => {
       // Remove the unenrolled course from the current data/state
       setData(prevData => prevData.filter(item => item.course_ID !== courseId));
