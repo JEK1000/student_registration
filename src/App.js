@@ -21,7 +21,7 @@ function App() {
    useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://nodeserver8.onrender.com/api/${studentID}`);
+        const response = await axios.get(`https://nodeserv-production.up.railway.app/api/${studentID}`);
          setUserName(response.data[0].first_name);
          console.log(response.data[0].first_name);
       } catch (error) {
@@ -37,7 +37,7 @@ function App() {
     if (result) {
       // Delete account
       console.log("Account deleted");
-      axios.delete(`https://nodeserver8.onrender.com/delete/${studentID}`)
+      axios.delete(`https://nodeserv-production.up.railway.app/delete/${studentID}`)
           .then(response => {
               console.log(response);
        });
