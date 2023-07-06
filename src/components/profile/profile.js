@@ -13,11 +13,7 @@ export default function Profile() {
 
   const [response, setResponse] = useState('');
   const [fname, setFname] = useState("");
-  const [lname, setLname] = useState("");
-  const [address, setAddress] = useState("");
-  const [pnumber, setPnumber] = useState("");
   const [email, setEmail] = useState("");
-  const [dob, setDOB] = useState("");
   const [password, setPassword] = useState("");
   const studentID = Cookies.get('user_id');
   const [data, setData] = useState("");
@@ -59,11 +55,7 @@ export default function Profile() {
           <h4>Profile</h4>
           <form onSubmit={handleSubmit}>
             <input type="text" placeholder={data.first_name} value={fname} onChange={(e) => setFname(e.target.value)} required/>
-            <input type="text" placeholder={data.last_name} value={lname} onChange={(e) => setLname(e.target.value)}  required/>
-            <input type="text" placeholder={data.address} value={address} onChange={(e) => setAddress(e.target.value)} required/>
-            <input type="tel" placeholder={data.phone_number} value={pnumber} onChange={(e) => setPnumber(e.target.value)} required/>
             <input type="email" placeholder={data.email} value={email} onChange={(e) => setEmail(e.target.value)}  required/>
-            <input type="date" placeholder={data.date_of_birth} value={dob}  onChange={(e) => setDOB(e.target.value)}  required/>
             <input type="password" placeholder={data.password} value={password} onChange={(e) => setPassword(e.target.value)}  required/>
             <button class="btn btn-primary" type="submit">Update</button>
           </form>
